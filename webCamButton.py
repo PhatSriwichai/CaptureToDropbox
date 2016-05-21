@@ -54,7 +54,7 @@ while True:
     
         
 
-    if GPIO.input(11) == GPIO.LOW:
+    if GPIO.input(11) == GPIO.LOW: #Capture
         print "Saving image..."
         timeStampString = datetime.datetime.now().strftime("%A_%Y-%m-%d_%I:%M:%S_%p")
         cv.SaveImage(timeStampString +".jpg",frame)
@@ -65,7 +65,8 @@ while True:
         print "Upload success."
         print "==========================="
         sleep(0.1)
-    if GPIO.input(13) == GPIO.LOW:
+    
+    if GPIO.input(13) == GPIO.LOW: #Exit system
         print "Exit"
         break
 
